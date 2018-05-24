@@ -29,7 +29,7 @@ public class ProductServices {
 	ProductDao productDAO;
 	
 	@ApiOperation(value="Get all Products")
-	@Path("/products")
+	@Path("/items")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Product> getAllProducts(){
@@ -39,7 +39,7 @@ public class ProductServices {
 	}
 	
 	@ApiOperation(value="Get a Product by ID")
-	@Path("/product/{productId}")
+	@Path("/item/{productId}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Product getProduct(@PathParam("productId") Integer productId){
@@ -48,7 +48,7 @@ public class ProductServices {
 	}
 	
 	@ApiOperation(value="Create a new Product")
-	@Path("/product")
+	@Path("/item")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -63,7 +63,7 @@ public class ProductServices {
 	}
 	
 	@ApiOperation(value="Delete a Product by ID")
-	@Path("/product/{productId}")
+	@Path("/item/{productId}")
 	@DELETE
 	@Produces(MediaType.APPLICATION_JSON)
 	public JsonResponse deleteProduct(@PathParam("productId") Integer productId){
